@@ -1,0 +1,9 @@
+http://localhost:5000/insert
+http://localhost:5000/songs
+http://localhost:5000/songs/md/MD1
+http://localhost:5000/songs/md/MD1/singer/S1
+http://localhost:5000/delete/Song1
+http://localhost:5000/add
+http://localhost:5000/update/Song2
+http://localhost:5000/songs/singer/S1/film/Film1
+http://localhost:5000/table

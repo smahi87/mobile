@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+    <head>   
+        <title>Register</title> 
+    </head> 
+    <body>  
+        <h2>Registration Form</h2>  
+        <input id="name" placeholder="Name"><br> 
+        <input id="email" placeholder="Email"><br> 
+        <input id="mobile" placeholder="Mobile"><br> 
+        <input id="dob" type="date"><br> 
+        <input id="city" placeholder="City"><br> 
+        <textarea id="address" placeholder="Address"></textarea><br>  
+        <button onclick="register()">Register</button>  
+        
+        <script> 
+        async function register() {   
+            const user = {     
+                name: document.getElementById("name").value.trim(),     
+                email: document.getElementById("email").value.trim(),     
+                mobile: document.getElementById("mobile").value.trim(),     
+                dob: document.getElementById("dob").value,     
+                city: document.getElementById("city").value.trim(),     
+                address: document.getElementById("address").value.trim()   };    
+                
+                if(!user.name || !user.email){     
+                    alert("enter name and email");     
+                    return;  
+                }     
+                if(!user.mobile.length == 10){     
+                    alert("enter valid 10 digit number");     
+                    return;   
+                }
+                    
+                let users = JSON.parse(localStorage.getItem('users')) ||[];     
+                await fetch("dummy-api", {     method: "POST",     body: JSON.stringify(user)    });    
+                 users.push(user);     
+                 localStorage.setItem("users", JSON.stringify(users));     
+                 alert("registration done");  }  
+                  </script>   
+                  </body>   
+                  </html> 

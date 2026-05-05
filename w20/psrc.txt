@@ -1,0 +1,9 @@
+W20 Create a backend application for managing employee records.Perform the following tasks using Node.js, Express.js, 
+and MongoDB.The following operations should be performed in Node.js and Express.jsonly:• Add a new employee (name, department,
+ designation, salary, joiningdate)• View all employee records• 
+Update an existing employee’s details• Delete an employee record
+
+http://localhost:5000/add
+http://localhost:5000/employees
+http://localhost:5000/update/Mahi Shah
+http://localhost:5000/delete/Mahi Shah

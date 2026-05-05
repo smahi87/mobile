@@ -1,0 +1,155 @@
+<!-- W23 Build a mobile website to display student clubs and extracurricular activities atPICT. 
+ Each club (e.g., Coding Club, Robotics Club, Dance Club) should have:• Name• Description• Achievements• Static images -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Clubs</title>
+
+    <link rel="stylesheet" href="jquery.mobile.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.mobile.min.js"></script>
+
+    <style>
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+  }
+
+  .content-padding {
+    padding: 12px;
+  }
+
+  /* CLUB CARD */
+  .club {
+    background: #ffffff;
+    margin-bottom: 18px;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+  }
+
+  .club:hover {
+    transform: scale(1.02);
+  }
+
+  .club h2 {
+    margin: 0 0 8px;
+    color: #2c3e50;
+  }
+
+  .club p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+
+  .achievements {
+    margin-top: 8px;
+  }
+
+  .achievements ul {
+    padding-left: 18px;
+    margin: 5px 0;
+  }
+
+  .achievements li {
+    font-size: 13px;
+    color: #444;
+  }
+
+  /* IMAGE STYLING */
+  .club img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  /* HEADER */
+  .ui-header {
+    background: #1e6173 !important;
+    color: white !important;
+    border: none;
+  }
+
+  .ui-header h1 {
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+  .ui-footer {
+    background: #1e6173 !important;
+    color: white !important;
+    border: none;
+  }
+
+    </style>
+</head> 
+
+<body>
+
+<div data-role="page">
+
+    <!-- HEADER -->
+    <div data-role="header">
+        <h1>PICT Clubs</h1>
+    </div>
+
+    <!-- NAVBAR -->
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#" class="ui-btn-active">Clubs</a></li>
+        </ul>
+    </div>
+
+    <!-- CONTENT -->
+    <div data-role="content">
+
+        <!-- Coding Club -->
+        <div data-role="collapsible">
+            <h3>Coding Club</h3>
+            <p><b>Description:</b> Focuses on programming, competitive coding, and hackathons.</p>
+            <div class="achievements">
+  <strong>Achievements:</strong>
+  <ul>
+    <li>Winners of National Hackathon 2024</li>
+    <li>Hosted PICT CodeSprint 2025</li>
+  </ul>
+</div>
+            <img src="coding.jpg" alt="Coding Club">
+        </div>
+
+        <!-- Robotics Club -->
+        <div data-role="collapsible">
+            <h3>Robotics Club</h3>
+            <p><b>Description:</b> Works on robotics, automation, and embedded systems.</p>
+            <p><b>Achievements:</b> Built autonomous robots for competitions.</p>
+            <img src="robotics.jpg" alt="Robotics Club">
+        </div>
+
+        <!-- Dance Club -->
+        <div data-role="collapsible">
+            <h3>Dance Club</h3>
+            <p><b>Description:</b> Promotes cultural and modern dance forms.</p>
+            <p><b>Achievements:</b> Winners at inter-college fests.</p>
+            <img src="dance.jpg" alt="Dance Club">
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div data-role="footer" data-position="fixed">
+        <h4>© PICT Clubs</h4>
+    </div>
+
+</div>
+
+</body>
+</html>

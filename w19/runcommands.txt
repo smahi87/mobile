@@ -1,0 +1,8 @@
+http://localhost:5000/insert
+http://localhost:5000/students
+http://localhost:5000/dsbda20
+http://localhost:5000/gt25all
+http://localhost:5000/less40
+http://localhost:5000/update/A
+http://localhost:5000/delete/A
+http://localhost:5000/table

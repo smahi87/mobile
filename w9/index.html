@@ -1,0 +1,20 @@
+<!-- Create a weather application using JavaScript and AJAX where users enter a cityname, and AJAX fetches 
+ real-time weather data dynamically from localrepository map having city with temperature, humidity, and conditions-->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ 
+  <title>Offline Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Offline Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherResult"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
