@@ -1,0 +1,102 @@
+app.html
+
+<div class = "container">
+  <h1>To-Do List</h1>
+
+  <input type="text" [(ngModel)]="currentTask" placeholder="Enter task">
+
+  <button (click)="saveTask()">
+    {{editingTaskIndex=== -1 ? 'Add Task' : 'Update Task'}}
+  </button>
+
+  <ul>
+    <li *ngFor="let task of taskList; let i = index">
+      {{ task }}
+
+      <button (click)="startediting(i)">Edit</button>
+      <button (click)="removeTask(i)">Delete</button>
+
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+app.ts 
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms' ;
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector : 'app-root',
+  standalone : true ,
+  imports : [FormsModule, CommonModule],
+  templateUrl : './app.html',
+  styleUrls : ['./app.css']
+})
+
+export class App {
+
+  currentTask = ' ';
+  taskList: string[] = [];
+  editingTaskIndex = -1;
+
+  saveTask() {
+    if(!this.currentTask) return;
+
+    if(this.editingTaskIndex === -1){
+      this.taskList.push(this.currentTask)
+    }
+    else
+    {
+      this.taskList[this.editingTaskIndex]=this.currentTask;
+      this.editingTaskIndex=-1;
+    }
+    this.currentTask=' ';
+  } 
+
+  removeTask(index:number)
+  {
+    this.taskList.splice(index,1);
+  }
+
+  startediting(index:number)
+  {
+    this.currentTask=this.taskList[index];
+    this.editingTaskIndex = index;
+  }
+}
+
+app.css
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+}
+
+div {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 80%;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+h3 {
+  margin-bottom: 15px;
+}
